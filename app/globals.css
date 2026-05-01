@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #09090b;
+  --foreground: #fafafa;
 }
 
 @theme inline {
@@ -12,15 +12,45 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: theme(--color-zinc-800);
+  }
+}
+
+.substrate-tooltip {
+  background: #18181b !important;
+  color: #f4f4f5 !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 6px !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  font-family: system-ui, sans-serif !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.substrate-tooltip::before {
+  border-top-color: #3f3f46 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #18181b !important;
+  color: #f4f4f5 !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: #18181b !important;
+  border: 1px solid #3f3f46 !important;
+}
+
+.leaflet-popup-close-button {
+  color: #a1a1aa !important;
 }

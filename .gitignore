@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Substrate decode working files
+*.md
+!README.md
+!CLAUDE.md
+!AGENTS.md
+
+# Temp files
+Usersajsuptmp_whisper/
+*.txt
+public/evidence/*.MOV
