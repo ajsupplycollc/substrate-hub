@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { cases } from "../data/cases";
 import NavLink from "./NavLink";
+import MobileNav from "./MobileNav";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -69,6 +70,7 @@ export default function RootLayout({
                 <NavLink href="/timeline">Timeline</NavLink>
                 <NavLink href="/map">Map</NavLink>
               </nav>
+              <MobileNav />
             </div>
           </div>
         </header>
