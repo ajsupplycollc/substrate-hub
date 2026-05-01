@@ -1,4 +1,8 @@
 import { ImageResponse } from "next/og";
+import { cases } from "../data/cases";
+import { evidence } from "../data/evidence";
+import { documents } from "../data/documents";
+import { figures } from "../data/figures";
 
 export const runtime = "nodejs";
 export const alt = "The Substrate — Mapping a Planetary Technology Lifecycle";
@@ -6,6 +10,13 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OgImage() {
+  const stats = [
+    { n: String(cases.length), l: "Cases" },
+    { n: String(evidence.length), l: "Evidence" },
+    { n: String(documents.length), l: "Documents" },
+    { n: String(figures.length), l: "Figures" },
+  ];
+
   return new ImageResponse(
     (
       <div
@@ -80,12 +91,7 @@ export default function OgImage() {
               marginTop: "16px",
             }}
           >
-            {[
-              { n: "513", l: "Cases" },
-              { n: "81", l: "Evidence" },
-              { n: "60", l: "Documents" },
-              { n: "90", l: "Figures" },
-            ].map((s) => (
+            {stats.map((s) => (
               <div
                 key={s.l}
                 style={{
