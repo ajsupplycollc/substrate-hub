@@ -17,8 +17,8 @@ The thesis: ancient sites worldwide share piezoelectric geology, acoustic resona
 | Category | Count |
 |----------|-------|
 | Interconnected Cases | 513 |
-| Evidence Items | 81 |
-| Declassified Documents | 60 |
+| Evidence Items | 123 |
+| Declassified Documents | 97 |
 | Key Figures | 90 |
 | Research Categories | 14 |
 
