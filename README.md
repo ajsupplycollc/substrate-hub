@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Substrate
 
-## Getting Started
+**Mapping a planetary consciousness technology lifecycle through convergent evidence.**
 
-First, run the development server:
+[**Live Site**](https://substrate-hub.vercel.app) | [**Start Here**](https://substrate-hub.vercel.app/start)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What Is This?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The Substrate is an open research hub that maps a single thesis across geology, archaeology, physics, ancient texts, consciousness research, and government documents — building a web of connections no single discipline could reveal alone.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The thesis: ancient sites worldwide share piezoelectric geology, acoustic resonance chambers, and geometric alignment patterns consistent with a planetary acoustic-electromagnetic network. This network was constructed, operated, degraded, suppressed, and is now being rediscovered.
 
-## Learn More
+## By The Numbers
 
-To learn more about Next.js, take a look at the following resources:
+| Category | Count |
+|----------|-------|
+| Interconnected Cases | 513 |
+| Evidence Items | 81 |
+| Declassified Documents | 60 |
+| Key Figures | 90 |
+| Research Categories | 14 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What's Inside
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Cases** — 513 cross-referenced research cases spanning 14 domains: scientific research, historical events, consciousness studies, military encounters, government programs, geological correlations, crash retrievals, nuclear proximity, whistleblower testimony, legislation, international programs, ancient texts, suppression architecture, and more.
 
-## Deploy on Vercel
+- **Evidence Vault** — Videos, documents, testimony, sensor data, and archaeological photographs. Pentagon-confirmed footage, congressional hearing recordings, declassified documents, and field evidence.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Documents & Archives** — Declassified military intelligence, FOIA releases, Vatican archives, ancient texts, scientific papers, legislative records, and whistleblower documents.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Key Figures** — 90 researchers, whistleblowers, military officials, scientists, and investigators with full bios, credentials, and linked cases.
+
+- **Knowledge Graph** — Interactive visualization of how cases, figures, evidence, and documents connect across domains.
+
+- **Interactive Map** — Geographic distribution of cases worldwide with coordinate data.
+
+- **Timeline** — Chronological view of events from ancient history through present day.
+
+## Research Domains
+
+The strongest categories by case coverage:
+
+1. **Scientific Research** — Peer-reviewed papers, laboratory findings, measured anomalies
+2. **Historical Cases** — Documented phenomena across centuries of recorded history
+3. **Consciousness / Psi** — Remote viewing, the mind-matter interface, biological hardware
+4. **Suppression Architecture** — Systematic removal of research from public access
+5. **Military / Intelligence** — Encounters, programs, and classified initiatives
+6. **Government / Policy** — Official programs, institutional responses, FOIA releases
+
+## Built With
+
+- [Next.js](https://nextjs.org/) 16 with React 19
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- TypeScript
+- Deployed on [Vercel](https://vercel.com)
+
+## Contributing
+
+This is an active research project. If you have evidence, documents, or case data to contribute, open an issue or pull request.
+
+## License
+
+Open source. Use it, share it, build on it.
