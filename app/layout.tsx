@@ -18,6 +18,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "The Substrate — Mapping a Planetary Technology Lifecycle",
   description: `${cases.length} interconnected cases mapping the construction, operation, degradation, suppression, and rediscovery of a planetary acoustic-electromagnetic network. Cross-reference ancient sites, consciousness research, piezoelectric geology, suppression architecture, and convergent evidence across every domain.`,
+  metadataBase: new URL("https://substrate-hub.vercel.app"),
+  openGraph: {
+    title: "The Substrate",
+    description: `${cases.length} cases mapping a planetary consciousness technology lifecycle — ancient sites, suppression architecture, crash retrievals, consciousness research, and convergent evidence across every domain.`,
+    siteName: "The Substrate",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Substrate",
+    description: `${cases.length} cases mapping a planetary consciousness technology lifecycle through convergent evidence.`,
+  },
 };
 
 export default function RootLayout({
