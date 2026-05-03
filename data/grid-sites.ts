@@ -313,16 +313,46 @@ export const gridConnections: GridConnection[] = [
   { from: "giza", to: "abu-rawash", type: "nile-corridor" },
   { from: "saqqara", to: "abusir", type: "nile-corridor" },
 
-  // Geodetic alignments
+  // Geodetic alignments — Giza hub radiating out
   { from: "giza", to: "baalbek", type: "geodetic" },
   { from: "giza", to: "gobekli-tepe", type: "geodetic" },
-  { from: "stonehenge", to: "carnac", type: "geodetic" },
   { from: "giza", to: "stonehenge", type: "geodetic" },
+  { from: "giza", to: "malta-hypogeum", type: "geodetic", label: "Mediterranean acoustic corridor" },
+  { from: "giza", to: "delphi", type: "geodetic" },
+  { from: "giza", to: "kailasa", type: "geodetic" },
+
+  // Mediterranean acoustic corridor
+  { from: "malta-hypogeum", to: "delphi", type: "geological", label: "110Hz resonance sites" },
+  { from: "delphi", to: "baalbek", type: "geological" },
+  { from: "delphi", to: "gobekli-tepe", type: "geological" },
+  { from: "malta-hypogeum", to: "carnac", type: "geodetic" },
+
+  // European corridor
+  { from: "stonehenge", to: "carnac", type: "geodetic" },
+  { from: "stonehenge", to: "newgrange", type: "geological", label: "Atlantic megalithic corridor" },
+  { from: "carnac", to: "newgrange", type: "geodetic" },
+
+  // Middle East cluster
+  { from: "gobekli-tepe", to: "derinkuyu", type: "geological" },
+  { from: "gobekli-tepe", to: "baalbek", type: "geodetic" },
+  { from: "derinkuyu", to: "baalbek", type: "geological" },
+
+  // Asia corridor
+  { from: "kailasa", to: "angkor-wat", type: "geodetic", label: "Indian Ocean corridor" },
+  { from: "kailasa", to: "borobudur", type: "geodetic" },
+  { from: "angkor-wat", to: "borobudur", type: "geodetic" },
+  { from: "angkor-wat", to: "xian-pyramids", type: "geodetic" },
+  { from: "borobudur", to: "longyou", type: "geological" },
+  { from: "xian-pyramids", to: "longyou", type: "geological", label: "Chinese underground corridor" },
+
+  // Americas corridor
   { from: "chavin", to: "tiwanaku", type: "geological" },
   { from: "tiwanaku", to: "nazca", type: "geological" },
-  { from: "teotihuacan", to: "cahokia", type: "geological" },
-  { from: "gobekli-tepe", to: "derinkuyu", type: "geological" },
-  { from: "angkor-wat", to: "borobudur", type: "geodetic" },
+  { from: "chavin", to: "nazca", type: "geological", label: "Andean acoustic corridor" },
+  { from: "teotihuacan", to: "cahokia", type: "geological", label: "Mississippi-Mexico corridor" },
+  { from: "nazca", to: "teotihuacan", type: "geodetic" },
+  { from: "easter-island", to: "tiwanaku", type: "geodetic", label: "Pacific-Andean link" },
+  { from: "cahokia", to: "newgrange", type: "great-circle", label: "Atlantic crossing alignment" },
 ];
 
 export const SITE_TYPE_META: Record<GridSite["type"], { label: string; color: string; radius: number }> = {
