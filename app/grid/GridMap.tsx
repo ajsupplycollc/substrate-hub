@@ -89,7 +89,7 @@ export default function GridMap() {
           fillOpacity: 0.75,
         }).addTo(map);
 
-        if (site.type === "hub") {
+        if (site.type === "hub" || site.type === "primary-node") {
           L.circleMarker([site.lat, site.lng], {
             radius: meta.radius + 6,
             fillColor: "transparent",
@@ -100,7 +100,10 @@ export default function GridMap() {
           }).addTo(map);
         }
 
-        marker.bindTooltip(site.name, {
+        const tooltipText = site.tribe
+          ? `${site.name} — Tribe of ${site.tribe.name}`
+          : site.name;
+        marker.bindTooltip(tooltipText, {
           permanent: false,
           direction: "top",
           offset: [0, -meta.radius],
@@ -115,18 +118,26 @@ export default function GridMap() {
           )
           .join("");
 
+        const tribeHtml = site.tribe
+          ? `<div style="background:#1a2e1a;border:1px solid #22543d;border-radius:6px;padding:8px;margin-bottom:8px">
+              <div style="font-size:11px;color:#34d399;font-weight:600;margin-bottom:2px">Tribe of ${site.tribe.name} — "${site.tribe.meaning}"</div>
+              <div style="font-size:11px;color:#a1a1aa;line-height:1.4">${site.tribe.role}</div>
+            </div>`
+          : "";
+
         marker.bindPopup(
-          `<div style="font-family:system-ui;min-width:240px;max-width:320px">
+          `<div style="font-family:system-ui;min-width:240px;max-width:340px">
             <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
               <div style="width:8px;height:8px;border-radius:50%;background:${meta.color}"></div>
               <span style="font-size:10px;color:${meta.color};text-transform:uppercase;letter-spacing:0.5px">${meta.label}</span>
             </div>
             <div style="font-weight:600;font-size:14px;margin-bottom:6px">${site.name}</div>
             <div style="font-size:12px;color:#a1a1aa;margin-bottom:4px">${site.region}</div>
+            ${tribeHtml}
             <div style="margin-bottom:8px">${propsHtml}</div>
             <div style="font-size:12px;color:#d4d4d8;line-height:1.5">${site.description.slice(0, 250)}${site.description.length > 250 ? "..." : ""}</div>
           </div>`,
-          { maxWidth: 340 }
+          { maxWidth: 360 }
         );
 
         marker.on("click", () => setSelectedSite(site));
@@ -214,6 +225,16 @@ export default function GridMap() {
               </svg>
             </button>
           </div>
+          {selectedSite.tribe && (
+            <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-4 mb-4">
+              <div className="text-sm font-semibold text-emerald-400 mb-1">
+                Tribe of {selectedSite.tribe.name} — &quot;{selectedSite.tribe.meaning}&quot;
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                {selectedSite.tribe.role}
+              </p>
+            </div>
+          )}
           <p className="text-sm text-zinc-300 leading-relaxed mb-4">
             {selectedSite.description}
           </p>
