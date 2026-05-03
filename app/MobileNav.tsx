@@ -51,8 +51,11 @@ export default function MobileNav() {
             <div className="py-2.5 border-b border-zinc-800/50">
               <NavLink href="/timeline">Timeline</NavLink>
             </div>
-            <div className="py-2.5">
+            <div className="py-2.5 border-b border-zinc-800/50">
               <NavLink href="/map">Map</NavLink>
+            </div>
+            <div className="py-2.5">
+              <NavLink href="/grid">Grid</NavLink>
             </div>
           </nav>
         </div>

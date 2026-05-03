@@ -1,0 +1,340 @@
+export interface GridSite {
+  id: string;
+  name: string;
+  lat: number;
+  lng: number;
+  region: string;
+  type: "hub" | "major-node" | "node" | "secondary";
+  properties: string[];
+  description: string;
+  substrateTags: string[];
+  caseIds?: string[];
+}
+
+export interface GridConnection {
+  from: string;
+  to: string;
+  type: "great-circle" | "geodetic" | "geological" | "nile-corridor";
+  label?: string;
+}
+
+export const gridSites: GridSite[] = [
+  // === NILE CORRIDOR (Central Hub) ===
+  {
+    id: "giza",
+    name: "Great Pyramid Complex, Giza",
+    lat: 29.9792,
+    lng: 31.1342,
+    region: "Nile Corridor",
+    type: "hub",
+    properties: ["piezoelectric limestone", "quartz-bearing granite", "underground chambers", "acoustic resonance", "water table access", "precise astronomical alignment"],
+    description: "Central hub of the planetary grid. Three main pyramids aligned to Orion's Belt, the Great Sphinx (and potentially a second), underground shafts extending ~2km. Piezoelectric limestone and granite interior chambers create electromagnetic conversion. Sits over the Nile aquifer system.",
+    substrateTags: ["archaeoacoustics", "piezoelectric-geology", "ancient-technology", "orion-correlation"],
+    caseIds: ["giza-precision", "sphinx-erosion"],
+  },
+  {
+    id: "saqqara",
+    name: "Saqqara & Serapeum",
+    lat: 29.8713,
+    lng: 31.2165,
+    region: "Nile Corridor",
+    type: "major-node",
+    properties: ["precision-machined granite boxes", "underground tunnels", "acoustic chambers", "Step Pyramid"],
+    description: "Serapeum contains 24 precision-machined granite boxes (100+ tons each) with tolerances within thousandths of an inch. Step Pyramid of Djoser is the oldest large-scale cut stone construction. Underground tunnel network connects to broader Nile corridor system.",
+    substrateTags: ["ancient-technology", "precision-engineering", "acoustic-chambers"],
+  },
+  {
+    id: "dahshur",
+    name: "Dahshur Pyramids",
+    lat: 29.7908,
+    lng: 31.2064,
+    region: "Nile Corridor",
+    type: "node",
+    properties: ["Bent Pyramid", "Red Pyramid", "acoustic experiments", "limestone"],
+    description: "Bent Pyramid shows mid-construction angle change suggesting dynamic engineering. Red Pyramid's internal chambers produce measurable acoustic resonance. Part of the dense Nile corridor node cluster.",
+    substrateTags: ["archaeoacoustics", "ancient-technology"],
+  },
+  {
+    id: "abusir",
+    name: "Abusir",
+    lat: 29.8942,
+    lng: 31.2017,
+    region: "Nile Corridor",
+    type: "secondary",
+    properties: ["sun temples", "astronomical alignment", "papyrus archives"],
+    description: "Sun temples with precise solar alignments. Abusir Papyri provide some of the oldest administrative records of pyramid construction logistics.",
+    substrateTags: ["astronomical-alignment"],
+  },
+  {
+    id: "abu-rawash",
+    name: "Abu Rawash",
+    lat: 30.0322,
+    lng: 31.0753,
+    region: "Nile Corridor",
+    type: "secondary",
+    properties: ["highest elevation pyramid", "granite-lined", "astronomical sightlines"],
+    description: "Northernmost Giza-area pyramid at the highest elevation. Granite-lined chamber suggests energy-focusing design. Provides sightlines to other Nile corridor nodes.",
+    substrateTags: ["ancient-technology", "astronomical-alignment"],
+  },
+
+  // === MEDITERRANEAN & MIDDLE EAST ===
+  {
+    id: "baalbek",
+    name: "Baalbek",
+    lat: 34.0069,
+    lng: 36.2039,
+    region: "Middle East",
+    type: "major-node",
+    properties: ["1500-ton trilithon stones", "precision-cut megaliths", "underground tunnels", "seismic zone"],
+    description: "Largest cut stones on Earth -- the Trilithon stones weigh up to 1,650 tons each. The Stone of the Pregnant Woman weighs ~1,000 tons. No modern crane can move these. Built on a seismic zone with documented underground tunnel systems.",
+    substrateTags: ["ancient-technology", "precision-engineering", "megalithic"],
+  },
+  {
+    id: "gobekli-tepe",
+    name: "Gobekli Tepe",
+    lat: 37.2231,
+    lng: 38.9225,
+    region: "Middle East",
+    type: "major-node",
+    properties: ["oldest megalithic site", "12,000+ years old", "T-shaped pillars", "acoustic properties", "deliberately buried"],
+    description: "Oldest known megalithic site, predating agriculture. T-shaped limestone pillars up to 6m tall arranged in circles with acoustic properties. Deliberately buried ~10,000 years ago -- preservation or concealment?",
+    substrateTags: ["archaeoacoustics", "ancient-technology", "pre-diluvian"],
+  },
+  {
+    id: "malta-hypogeum",
+    name: "Hal Saflieni Hypogeum, Malta",
+    lat: 35.8692,
+    lng: 14.5083,
+    region: "Mediterranean",
+    type: "major-node",
+    properties: ["110Hz resonance", "underground chambers", "Oracle Room", "altered consciousness", "5,000+ years old"],
+    description: "Underground temple complex with the Oracle Room that resonates at exactly 110Hz -- the frequency UCLA studies showed alters prefrontal cortex activity and shifts brain function. One of the clearest examples of intentional acoustic engineering for consciousness alteration.",
+    substrateTags: ["archaeoacoustics", "consciousness-technology", "110hz"],
+    caseIds: ["malta-hypogeum"],
+  },
+  {
+    id: "delphi",
+    name: "Oracle at Delphi",
+    lat: 38.4824,
+    lng: 22.5010,
+    region: "Mediterranean",
+    type: "node",
+    properties: ["geological fault line", "ethylene emissions", "trance states", "omphalos stone"],
+    description: "Built directly over intersecting geological fault lines emitting ethylene gas. The Pythia priestess entered trance states at this specific location. The Omphalos stone may have served as an acoustic resonator.",
+    substrateTags: ["consciousness-technology", "geological-anomaly"],
+  },
+  {
+    id: "newgrange",
+    name: "Newgrange",
+    lat: 53.6947,
+    lng: -6.4755,
+    region: "Europe",
+    type: "node",
+    properties: ["solstice alignment", "acoustic chamber", "quartz facade", "5,200 years old"],
+    description: "Passage tomb older than the pyramids. Inner chamber resonates at specific frequencies. Original white quartz facade suggests piezoelectric properties. Precisely aligned to winter solstice sunrise.",
+    substrateTags: ["archaeoacoustics", "piezoelectric-geology", "astronomical-alignment"],
+  },
+  {
+    id: "carnac",
+    name: "Carnac Stones",
+    lat: 47.5950,
+    lng: -3.0750,
+    region: "Europe",
+    type: "node",
+    properties: ["3,000+ standing stones", "piezoelectric quartz", "geometric alignment", "earthquake sensitivity"],
+    description: "Over 3,000 standing stones arranged in precise geometric rows stretching 4km. Many stones are quartz-bearing granite -- piezoelectric. Pierre Mereux documented measurable electromagnetic emissions from the stones, intensifying during seismic activity.",
+    substrateTags: ["piezoelectric-geology", "ancient-technology", "electromagnetic"],
+    caseIds: ["carnac-piezoelectric"],
+  },
+  {
+    id: "stonehenge",
+    name: "Stonehenge",
+    lat: 51.1789,
+    lng: -1.8262,
+    region: "Europe",
+    type: "major-node",
+    properties: ["bluestones from Wales", "acoustic properties", "solstice alignment", "electromagnetic anomaly"],
+    description: "Bluestones transported 150 miles from Wales -- possibly selected for their specific acoustic properties (they ring when struck). Positioned at the intersection of multiple ley lines. Measurable electromagnetic anomalies at the site.",
+    substrateTags: ["archaeoacoustics", "piezoelectric-geology", "astronomical-alignment"],
+  },
+
+  // === AMERICAS ===
+  {
+    id: "teotihuacan",
+    name: "Teotihuacan",
+    lat: 19.6925,
+    lng: -98.8438,
+    region: "Americas",
+    type: "major-node",
+    properties: ["mica sheets", "cave system beneath", "acoustic corridors", "mercury deposits", "Avenue of the Dead"],
+    description: "Pyramid of the Sun built directly over a cave system with acoustic properties. Mica sheets (an electrical insulator) were embedded in the pyramid's upper layers -- no decorative purpose, purely functional. Mercury deposits found beneath the Temple of the Feathered Serpent. The Avenue of the Dead functions as an acoustic waveguide.",
+    substrateTags: ["archaeoacoustics", "ancient-technology", "consciousness-technology"],
+  },
+  {
+    id: "chavin",
+    name: "Chavin de Huantar",
+    lat: -9.5947,
+    lng: -77.1775,
+    region: "Americas",
+    type: "major-node",
+    properties: ["acoustic manipulation confirmed", "water channels for sound", "Lanzon monolith", "psychoacoustic design"],
+    description: "Stanford archaeoacoustics team confirmed the underground galleries were engineered for psychoacoustic manipulation. Water channels created specific sound frequencies. The Lanzon monolith is positioned at the acoustic focal point. Visitors would have experienced disorientation and altered consciousness.",
+    substrateTags: ["archaeoacoustics", "consciousness-technology"],
+    caseIds: ["chavin-acoustics"],
+  },
+  {
+    id: "tiwanaku",
+    name: "Tiwanaku & Puma Punku",
+    lat: -16.5561,
+    lng: -68.6725,
+    region: "Americas",
+    type: "major-node",
+    properties: ["precision H-blocks", "diorite construction", "3,800m altitude", "astronomical alignment", "interlocking stones"],
+    description: "Puma Punku's H-blocks are precision-machined from diorite (one of the hardest stones on Earth) with interlocking joints and uniform dimensions. At 3,800m altitude on the Altiplano. The precision and material hardness suggest technology beyond known ancient capabilities.",
+    substrateTags: ["ancient-technology", "precision-engineering"],
+  },
+  {
+    id: "nazca",
+    name: "Nazca Lines",
+    lat: -14.7350,
+    lng: -75.1300,
+    region: "Americas",
+    type: "node",
+    properties: ["geoglyphs visible from altitude", "underground water mapping", "piezoelectric desert floor"],
+    description: "Massive geoglyphs only fully visible from altitude. Some researchers have mapped the lines to underground aquifer systems. The iron-oxide desert surface removed to create the lines may have altered the electromagnetic properties of the ground.",
+    substrateTags: ["ancient-technology", "geological-anomaly"],
+  },
+  {
+    id: "cahokia",
+    name: "Cahokia Mounds",
+    lat: 38.6556,
+    lng: -90.0625,
+    region: "Americas",
+    type: "node",
+    properties: ["largest pre-Columbian structure (N. America)", "Woodhenge astronomical circle", "mound alignment"],
+    description: "Monks Mound is the largest pre-Columbian earthwork in North America. Woodhenge served as a solar calendar. The site sits at the confluence of the Mississippi, Missouri, and Illinois rivers -- a major geological intersection.",
+    substrateTags: ["astronomical-alignment", "ancient-technology"],
+  },
+
+  // === ASIA & PACIFIC ===
+  {
+    id: "angkor-wat",
+    name: "Angkor Wat Complex",
+    lat: 13.4125,
+    lng: 103.8670,
+    region: "Asia & Pacific",
+    type: "major-node",
+    properties: ["water-based resonance", "precise geodetic position", "astronomical alignment", "largest religious complex"],
+    description: "Largest religious complex on Earth. The extensive water/moat system may function as acoustic waveguides. Precise astronomical alignments to equinoxes and solstices. Its geodetic position is exactly 72 degrees of longitude from Giza -- 72 is the precession number (1 degree per 72 years).",
+    substrateTags: ["archaeoacoustics", "astronomical-alignment", "water-resonance"],
+  },
+  {
+    id: "borobudur",
+    name: "Borobudur",
+    lat: -7.6079,
+    lng: 110.2038,
+    region: "Asia & Pacific",
+    type: "node",
+    properties: ["stupa resonance chambers", "volcanic stone", "mandala geometry", "72 perforated stupas"],
+    description: "72 perforated stupas at the top level (precession number again). Built from volcanic andesite. The bell-shaped stupas may function as Helmholtz resonators. Mandala geometry from above mirrors cymatics patterns.",
+    substrateTags: ["archaeoacoustics", "sacred-geometry", "consciousness-technology"],
+  },
+  {
+    id: "xian-pyramids",
+    name: "Xi'an Pyramid Field",
+    lat: 34.3380,
+    lng: 108.5694,
+    region: "Asia & Pacific",
+    type: "node",
+    properties: ["40+ pyramids", "restricted access", "astronomical alignment", "loess soil"],
+    description: "Over 40 pyramidal mounds in Shaanxi province. Chinese government restricted access for decades. Several show astronomical alignment. The largest rivals the Great Pyramid in base dimensions. Loess soil composition contains quartz particles.",
+    substrateTags: ["ancient-technology", "suppression", "astronomical-alignment"],
+  },
+  {
+    id: "derinkuyu",
+    name: "Derinkuyu Underground City",
+    lat: 38.3747,
+    lng: 34.7347,
+    region: "Middle East",
+    type: "node",
+    properties: ["18 levels deep", "volcanic tuff", "ventilation engineering", "capacity 20,000+"],
+    description: "Underground city carved from volcanic tuff extending 18 levels deep, capable of housing 20,000+ people. Sophisticated ventilation shafts and water management. The scale of underground engineering parallels Biondi's Giza findings.",
+    substrateTags: ["ancient-technology", "underground-infrastructure"],
+    caseIds: ["derinkuyu"],
+  },
+  {
+    id: "easter-island",
+    name: "Rapa Nui (Easter Island)",
+    lat: -27.1127,
+    lng: -109.3497,
+    region: "Pacific",
+    type: "node",
+    properties: ["moai statues", "volcanic rock", "acoustic properties", "remote Pacific location"],
+    description: "Moai carved from volcanic tuff with documented acoustic properties. Located at a remote Pacific geodetic point. Oral traditions describe the statues 'walking' via sound/vibration -- possibly acoustic levitation at smaller scale.",
+    substrateTags: ["archaeoacoustics", "ancient-technology"],
+  },
+  {
+    id: "kailasa",
+    name: "Kailasa Temple, Ellora",
+    lat: 20.0258,
+    lng: 75.1780,
+    region: "Asia & Pacific",
+    type: "node",
+    properties: ["carved top-down from single rock", "400,000 tons removed", "basalt", "acoustic chambers"],
+    description: "Carved top-down from a single basalt cliff face. An estimated 400,000 tons of rock were removed. The engineering approach (top-down carving) and precision suggest technology beyond conventional explanations. Internal chambers have acoustic properties.",
+    substrateTags: ["ancient-technology", "precision-engineering"],
+    caseIds: ["kailasa-temple"],
+  },
+  {
+    id: "longyou",
+    name: "Longyou Caves",
+    lat: 29.0389,
+    lng: 119.1719,
+    region: "Asia & Pacific",
+    type: "secondary",
+    properties: ["precision-carved caverns", "uniform chisel marks", "2,000+ years old", "unknown builders"],
+    description: "36 massive underground caverns with precision-carved walls showing uniform chisel marks at consistent 60-degree angles. An estimated 1,000,000 cubic meters of rock removed. No historical record of their construction exists.",
+    substrateTags: ["ancient-technology", "underground-infrastructure"],
+    caseIds: ["longyou-caves"],
+  },
+];
+
+export const gridConnections: GridConnection[] = [
+  // Great Circle alignment
+  { from: "giza", to: "angkor-wat", type: "great-circle", label: "72° longitude (precession)" },
+  { from: "angkor-wat", to: "easter-island", type: "great-circle" },
+  { from: "easter-island", to: "nazca", type: "great-circle" },
+  { from: "nazca", to: "giza", type: "great-circle" },
+  { from: "giza", to: "teotihuacan", type: "great-circle" },
+
+  // Nile Corridor geological links
+  { from: "giza", to: "saqqara", type: "nile-corridor" },
+  { from: "saqqara", to: "dahshur", type: "nile-corridor" },
+  { from: "giza", to: "abu-rawash", type: "nile-corridor" },
+  { from: "saqqara", to: "abusir", type: "nile-corridor" },
+
+  // Geodetic alignments
+  { from: "giza", to: "baalbek", type: "geodetic" },
+  { from: "giza", to: "gobekli-tepe", type: "geodetic" },
+  { from: "stonehenge", to: "carnac", type: "geodetic" },
+  { from: "giza", to: "stonehenge", type: "geodetic" },
+  { from: "chavin", to: "tiwanaku", type: "geological" },
+  { from: "tiwanaku", to: "nazca", type: "geological" },
+  { from: "teotihuacan", to: "cahokia", type: "geological" },
+  { from: "gobekli-tepe", to: "derinkuyu", type: "geological" },
+  { from: "angkor-wat", to: "borobudur", type: "geodetic" },
+];
+
+export const SITE_TYPE_META: Record<GridSite["type"], { label: string; color: string; radius: number }> = {
+  hub: { label: "Central Hub", color: "#f59e0b", radius: 12 },
+  "major-node": { label: "Major Node", color: "#34d399", radius: 9 },
+  node: { label: "Node", color: "#60a5fa", radius: 7 },
+  secondary: { label: "Secondary", color: "#a78bfa", radius: 5 },
+};
+
+export const CONNECTION_TYPE_META: Record<GridConnection["type"], { label: string; color: string; dash?: string }> = {
+  "great-circle": { label: "Great Circle Alignment", color: "#f59e0b", dash: "10, 5" },
+  geodetic: { label: "Geodetic Alignment", color: "#34d399", dash: "6, 4" },
+  geological: { label: "Geological Connection", color: "#60a5fa", dash: "4, 4" },
+  "nile-corridor": { label: "Nile Corridor", color: "#fb923c" },
+};

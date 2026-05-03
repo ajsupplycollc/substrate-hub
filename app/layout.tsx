@@ -69,6 +69,7 @@ export default function RootLayout({
                 <NavLink href="/documents">Documents</NavLink>
                 <NavLink href="/timeline">Timeline</NavLink>
                 <NavLink href="/map">Map</NavLink>
+                <NavLink href="/grid">Grid</NavLink>
               </nav>
               <MobileNav />
             </div>
